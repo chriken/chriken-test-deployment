@@ -12,4 +12,4 @@ steps:
 - waitFor: ['-']
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/${_PROJECT_ID}/${_IMAGE_NAME}', '.']
-  images: ['gcr.io${_PROJECT_ID}/${_IMAGE_NAME}']
+  images: ['gcr.io/${_PROJECT_ID}/${_IMAGE_NAME}']
