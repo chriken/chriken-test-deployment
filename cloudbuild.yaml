@@ -1,6 +1,12 @@
 steps:
 - name: 'gcr.io/cloud-builders/mvn'
-  args: ['install']
+  args: ['build']
+  artifacts:
+  objects:
+    location: "gs://${_BUCKET}/"
+    paths:
+    - "target/${_TARGET}"
+  
 
 -  name: 'gcr.io/cloud-builders/docker'
    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/simple-image', '.' ]
