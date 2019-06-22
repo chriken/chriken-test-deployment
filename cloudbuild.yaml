@@ -13,7 +13,7 @@ steps:
   - '-Dsonar.host.url=https://sonar.dpe-dev.netent.systems'
   - '-Dsonar.login=2e2211f9915ccabc2c1570ae1cb9d909b67dccab'
   - '-Dsonar.projectKey=dpe-dev'
-  - '-Dsonar.organization=Sonar way'
+#  - '-Dsonar.organization=Sonar way'
   - '-Dsonar.sources=.'
 
 images: ['gcr.io/$PROJECT_ID/simple-image']
