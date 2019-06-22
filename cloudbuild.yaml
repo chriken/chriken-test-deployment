@@ -8,7 +8,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/simple-image', '.' ]
 
-- name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
+- name: 'gcr.io/$PROJECT_ID/simple-image:latest'
   args:
   - '-Dsonar.host.url=https://sonar.dpe-dev.netent.systems'
   - '-Dsonar.login=33fb596adf1bc179099f469c404d9c576c24a218'
