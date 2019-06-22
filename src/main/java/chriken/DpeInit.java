@@ -19,7 +19,7 @@ public class DpeInit {
 	
 static class MyHandler implements HttpHandler {
     public void handle(HttpExchange t) throws IOException {
-      byte [] response = "Welcome to test page!".getBytes();
+      byte [] response = "Welcome to the test page!".getBytes();
       t.sendResponseHeaders(200, response.length);
       OutputStream os = t.getResponseBody();
       os.write(response);
