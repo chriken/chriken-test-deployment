@@ -11,7 +11,7 @@ steps:
 - name: 'gcr.io/$PROJECT_ID/simple-image:latest'
   args:
   - '-Dsonar.host.url=https://sonar.dpe-dev.netent.systems'
-  - '-Dsonar.login=33fb596adf1bc179099f469c404d9c576c24a218'
+  - '-Dsonar.login=2e2211f9915ccabc2c1570ae1cb9d909b67dccab'
   - '-Dsonar.projectKey=dpe-dev'
   - '-Dsonar.organization=NetEnt'
   - '-Dsonar.sources=.'
