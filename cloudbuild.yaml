@@ -24,7 +24,7 @@ steps:
       # - '-Dsonar.organization=NetEnt'
       - '-Dsonar.sources=.'
 
-images: ['gcr.io/$PROJECT_ID/simple-image']
+images: ['gcr.io/$PROJECT_ID/simple-image:v1.0']
 
 artifacts:
   objects:
