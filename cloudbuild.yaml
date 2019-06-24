@@ -16,6 +16,12 @@ steps:
       - 'gcr.io/$PROJECT_ID/simple-image'
       - '.'
 
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'tag'
+      - 'gcr.io/$PROJECT_ID/simple-image:latest'
+      - 'gcr.io/$PROJECT_ID/simple-image:v1.0'
+
   - name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
     args:
       - '-Dsonar.host.url=https://sonar.dpe-dev.netent.systems'
