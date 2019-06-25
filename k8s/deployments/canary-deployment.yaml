@@ -23,7 +23,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /test
-            port: 8080
+            port: 8000
         env:
         - name: COMPONENT
           value: backend
