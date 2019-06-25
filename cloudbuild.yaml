@@ -29,6 +29,9 @@ steps:
       - '-Dsonar.projectKey=dpe-dev'
       # - '-Dsonar.organization=NetEnt'
       - '-Dsonar.sources=.'
+      
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['cp', '-r', 'k8s/*', 'gs://$PROJECT_ID-kubernetes-tutorial-manifests']
 
 images: ['gcr.io/$PROJECT_ID/simple-image:v1.0']
 
