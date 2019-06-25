@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: gcr.io//dpe-dev-e1296334/simple-image:v1.0
+        image: gcr.io/dpe-dev-e1296334/simple-image:v1.0
         resources:
           limits:
             memory: "500Mi"
