@@ -23,7 +23,7 @@
 	        <configuration>
 	          <transformers>
 	            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-	              <mainClass>org.lazydevs.veetle.api.VeetleAPI</mainClass>
+	              <mainClass>DpeInit.class</mainClass>
 	            </transformer>
 	          </transformers>
 	        </configuration>
