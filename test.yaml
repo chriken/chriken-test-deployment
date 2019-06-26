@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: jnlp
+    image: eu.gcr.io/gke-dev-d40d603b/netent/j2p-jenkins-agent-jnlp:latest_int_test
+    volumeMounts:
+      - mountPath: /home/jenkins/.sonar
+        name: sonar-cache
+  - name: maven
+    image: ${buildImage ?: 'eu.gcr.io/gke-dev-d40d603b/netent/j2p-jenkins-agent-maven:latest_int_test'}
+    command:
+    - cat
+    tty: true
+    volumeMounts:
+      - mountPath: /root/maven-repository
+        name: maven-cache
+  volumes:
+  - name: maven-cache
+    nfs:
+      server: nfs-server.jenkins-nfs.svc.cluster.local
+      path: /maven
+      readOnly: false
+  - name: sonar-cache
+    nfs:
+      server: nfs-server.jenkins-nfs.svc.cluster.local
+      path: /
+      readOnly: false
+  dnsPolicy: None
+  dnsConfig:
+    nameservers:
+      - 10.71.4.130
+      - 10.71.4.131
