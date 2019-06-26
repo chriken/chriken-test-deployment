@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: spinnaker-ingress
+  namespace: spinnaker
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: dpe-spinnaker
+    networking.gke.io/managed-certificates: spinnaker-dpe-dev-netent-systems-certificate
+    kubernetes.io/ingress.allow-http: "false"
+spec:
+  backend:
+    serviceName: spin-deck-public
+    servicePort: 9000
+  rules:
+  - host: spinnaker.dpe-dev.netent.systems
+    http:
+      paths:
+        - backend:
+            serviceName: spin-deck-public
+            servicePort: 9000
+  - host: spinnaker-api.dpe-dev.netent.systems
+    http:
+      paths:
+        - backend:
+            serviceName: spin-gate-public
+            servicePort: 8084
